@@ -2,7 +2,7 @@
 
 A completely free alternative to Rainbow Brackets for IntelliJ Platform IDEs. Colors nested curly braces `{}` based on nesting depth across all programming languages.
 
-![Plugin Demo](docs/demo-screenshot.png)
+![Plugin Demo](src/demo/NestedDemo.png)
 
 ## Features
 
