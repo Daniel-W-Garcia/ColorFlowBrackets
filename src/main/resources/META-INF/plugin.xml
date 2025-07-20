@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.danielwgarcia.FreeColorflowBrackets</id>
+    <name>Free Colorflow Brackets</name>
+    <version>1.0.0</version>
+    <vendor email="levelbasedbrackets@gmail.com" url="https://github.com/Daniel-W-Garcia">Daniel Garcia</vendor>
+
+    <description><![CDATA[
+    <h1>Free Bracket Colorer</h1>
+    <p>A completely free alternative to Rainbow Brackets - Colors nested curly braces <code>{}</code> based on nesting depth.</p>
+    <ul>
+        <li><strong>Universal Support:</strong> Works with C#, Java, Kotlin, and all supported languages</li>
+        <li><strong>6 Color Levels:</strong> Handles deeply nested code structures</li>
+        <li><strong>Customizable:</strong> Set your own colors in Settings → Editor → Color Scheme → Free Bracket Colorer</li>
+        <li><strong>100% Free:</strong> No subscriptions, no limitations</li>
+    </ul>
+    <p><em>Perfect for C# developers frustrated with paid bracket colorizers!</em></p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h2>Version 1.0.0</h2>
+    <ul>
+        <li>Initial release</li>
+        <li>Support for all languages including C#</li>
+        <li>6 customizable color levels for deep nesting</li>
+        <li>Lightweight and fast</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="" implementationClass="com.danielwgarcia.freecolorflowbrackets.BracketAnnotator"/>
+        <colorSettingsPage implementation="com.danielwgarcia.freecolorflowbrackets.BracketColorSettingsPage"/>
+    </extensions>
+</idea-plugin>
