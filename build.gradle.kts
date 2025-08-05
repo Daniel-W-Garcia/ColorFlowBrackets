@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.danielwgarcia"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -26,8 +26,7 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = "243"
-            untilBuild = "251.*"
+            sinceBuild = "213"
         }
     }
 }
