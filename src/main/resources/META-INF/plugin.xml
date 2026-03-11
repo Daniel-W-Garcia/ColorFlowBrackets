@@ -1,30 +1,33 @@
 <idea-plugin>
     <id>com.danielwgarcia.FreeColorflowBrackets</id>
     <name>Free Colorflow Brackets</name>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <vendor email="levelbasedbrackets@gmail.com" url="https://github.com/Daniel-W-Garcia">Daniel Garcia</vendor>
 
     <!-- IDE version compatibility -->
-    <idea-version since-build="213"/>
+    <idea-version since-build="243" until-build="253.*"/>
 
     <description><![CDATA[
-    <h1>Free Bracket Colorer</h1>
-    <p>A completely free alternative to Rainbow Brackets - Colors nested curly braces <code>{}</code> based on nesting depth.</p>
+    <h1>Free Colorflow Brackets</h1>
+    <p>A completely free alternative to subscription or fee based alternatives - Colors nested curly braces <code>{}</code> based on nesting depth across all supported programming languages.</p>
     <ul>
         <li><strong>Universal Support:</strong> Works with C#, Java, Kotlin, Python, JavaScript, and all supported languages</li>
         <li><strong>6 Color Levels:</strong> Handles deeply nested code structures</li>
         <li><strong>Customizable:</strong> Set your own colors in Settings → Editor → Color Scheme → Free Bracket Colorer</li>
-        <li><strong>100% Free:</strong> No subscriptions, no limitations</li>
+        <li><strong>100% Free:</strong> No subscriptions, no limitations, completely open source</li>
+        <li><strong>Lightweight:</strong> Minimal performance impact</li>
     </ul>
-    <p><em>Perfect for developers frustrated with paid bracket colorizers!</em></p>
     ]]></description>
 
     <change-notes><![CDATA[
+    <h2>Version 1.1.0</h2>
+    <ul>
+        <li>Updated compatibility for JetBrains IDEs 2025.3 and later</li>
+        <li>Supports build range 243 through 253.*</li>
+    </ul>
     <h2>Version 1.0.1</h2>
     <ul>
-        <li>Fixed compatibility with PyCharm 2024.2+ (build 252)</li>
-        <li>Extended IDE version support</li>
-        <li>Added Icon Logo</li>
+        <li>Expanded IDE support across all JetBrains platforms</li>
     </ul>
     <h2>Version 1.0.0</h2>
     <ul>
@@ -34,7 +37,7 @@
         <li>Lightweight and fast</li>
         <li>Works across all JetBrains IDEs</li>
     </ul>
-]]></change-notes>
+    ]]></change-notes>
 
     <!-- Platform module dependency - provides cross-IDE compatibility -->
     <depends>com.intellij.modules.platform</depends>
