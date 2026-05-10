@@ -3,11 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.2.20"
-    id("org.jetbrains.intellij.platform") version "2.11.0"
+    id("org.jetbrains.intellij.platform") version "2.16.0"
 }
 
 group = "com.danielwgarcia"
-version = "1.1.0"
+version = "1.2.0"
 
 repositories {
     mavenCentral()
@@ -18,9 +18,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        // intellijIdeaCommunity() is no longer available for 2025.3+.
-        // Must use intellijIdea() for 2025.3 and all future versions.
-        intellijIdea("2025.3")
+        intellijIdea("2026.1")
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
     }
 }
@@ -28,8 +26,8 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = "243"
-            untilBuild = "253.*"
+            sinceBuild = "253"
+            untilBuild = provider {null}
         }
     }
 }

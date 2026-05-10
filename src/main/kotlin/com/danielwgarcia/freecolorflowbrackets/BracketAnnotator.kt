@@ -5,29 +5,45 @@ import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
+import com.intellij.openapi.editor.markup.TextAttributes
 import com.intellij.psi.PsiElement
+import java.awt.Color
+import java.awt.Font
 
 class BracketAnnotator : Annotator {
 
     companion object {
-        // 6 depth levels of nesting
-        val BRACKET_LEVEL_0 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_0",
-            DefaultLanguageHighlighterColors.BRACES)
-        val BRACKET_LEVEL_1 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_1",
-            DefaultLanguageHighlighterColors.BRACES)
-        val BRACKET_LEVEL_2 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_2",
-            DefaultLanguageHighlighterColors.BRACES)
-        val BRACKET_LEVEL_3 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_3",
-            DefaultLanguageHighlighterColors.BRACES)
-        val BRACKET_LEVEL_4 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_4",
-            DefaultLanguageHighlighterColors.BRACES)
-        val BRACKET_LEVEL_5 = TextAttributesKey.createTextAttributesKey("BRACKET_LEVEL_5",
-            DefaultLanguageHighlighterColors.BRACES)
+        // Single source of truth for default colors
+        private object DefaultColors {
+            val LEVEL_0 = Color(255, 251, 0)        // Yellow
+            val LEVEL_1 = Color(44, 237, 16)         // Green
+            val LEVEL_2 = Color(0xFF, 0x8C, 0x00)    // Orange
+            val LEVEL_3 = Color(79, 79, 227)    // Blue
+            val LEVEL_4 = Color(0x99, 0x00, 0xAA)    // Purple
+            val LEVEL_5 = Color(0x00, 0x77, 0x99)    // Teal
+        }
 
-        //Generic fallbacks for all levels. Update in Settings > Editor > Color Scheme > Free Bracket Colorer
+        // Pass TextAttributes directly as the fallback — no intermediate named key needed
+        private fun createBracketKey(name: String, color: Color): TextAttributesKey =
+            TextAttributesKey.createTextAttributesKey(
+                name,
+                TextAttributes(color, null, null, null, Font.PLAIN)
+            )
 
-        private val bracketColors = arrayOf(BRACKET_LEVEL_0, BRACKET_LEVEL_1, BRACKET_LEVEL_2, BRACKET_LEVEL_3, BRACKET_LEVEL_4, BRACKET_LEVEL_5)
+        val BRACKET_LEVEL_0 = createBracketKey("BRACKET_LEVEL_0", DefaultColors.LEVEL_0)
+        val BRACKET_LEVEL_1 = createBracketKey("BRACKET_LEVEL_1", DefaultColors.LEVEL_1)
+        val BRACKET_LEVEL_2 = createBracketKey("BRACKET_LEVEL_2", DefaultColors.LEVEL_2)
+        val BRACKET_LEVEL_3 = createBracketKey("BRACKET_LEVEL_3", DefaultColors.LEVEL_3)
+        val BRACKET_LEVEL_4 = createBracketKey("BRACKET_LEVEL_4", DefaultColors.LEVEL_4)
+        val BRACKET_LEVEL_5 = createBracketKey("BRACKET_LEVEL_5", DefaultColors.LEVEL_5)
+
+        private val bracketColors = arrayOf(
+            BRACKET_LEVEL_0, BRACKET_LEVEL_1, BRACKET_LEVEL_2,
+            BRACKET_LEVEL_3, BRACKET_LEVEL_4, BRACKET_LEVEL_5
+        )
     }
+
+
 
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         val text = element.text

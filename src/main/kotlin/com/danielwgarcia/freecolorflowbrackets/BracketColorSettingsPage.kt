@@ -24,7 +24,7 @@ class BracketColorSettingsPage : ColorSettingsPage {
 
     override fun getColorDescriptors(): Array<ColorDescriptor> = ColorDescriptor.EMPTY_ARRAY
 
-    override fun getDisplayName(): String = "Free Bracket Colorer"
+    override fun getDisplayName(): String = "ColorFlowBrackets"
 
     override fun getIcon(): Icon? {
         return IconLoader.getIcon("/META-INF/AoS.png", javaClass)

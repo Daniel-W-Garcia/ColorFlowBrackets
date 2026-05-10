@@ -1,11 +1,11 @@
 <idea-plugin>
     <id>com.danielwgarcia.FreeColorflowBrackets</id>
     <name>Free Colorflow Brackets</name>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <vendor email="levelbasedbrackets@gmail.com" url="https://github.com/Daniel-W-Garcia">Daniel Garcia</vendor>
 
     <!-- IDE version compatibility -->
-    <idea-version since-build="243" until-build="253.*"/>
+    <idea-version since-build="253"/>
 
     <description><![CDATA[
     <h1>Free Colorflow Brackets</h1>
@@ -20,10 +20,13 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <h2>Version 1.2.0</h2>
+    <ul>
+        <li>Updated compatibility for JetBrains IDE's 2026.1 and later</li>
+    </ul>
     <h2>Version 1.1.0</h2>
     <ul>
         <li>Updated compatibility for JetBrains IDEs 2025.3 and later</li>
-        <li>Supports build range 243 through 253.*</li>
     </ul>
     <h2>Version 1.0.1</h2>
     <ul>
@@ -45,5 +48,15 @@
     <extensions defaultExtensionNs="com.intellij">
         <annotator language="" implementationClass="com.danielwgarcia.freecolorflowbrackets.BracketAnnotator"/>
         <colorSettingsPage implementation="com.danielwgarcia.freecolorflowbrackets.BracketColorSettingsPage"/>
+
+        <!-- Default colors for light themes -->
+        <additionalTextAttributes
+                scheme="Default"
+                file="colorSchemes/ColorFlowBracketsDefault.xml"/>
+
+        <!-- Default colors for dark themes -->
+        <additionalTextAttributes
+                scheme="Darcula"
+                file="colorSchemes/ColorFlowBracketsDarcula.xml"/>
     </extensions>
 </idea-plugin>
