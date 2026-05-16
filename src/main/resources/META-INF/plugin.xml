@@ -1,62 +1,19 @@
 <idea-plugin>
     <id>com.danielwgarcia.FreeColorflowBrackets</id>
     <name>Free Colorflow Brackets</name>
-    <version>1.2.0</version>
-    <vendor email="levelbasedbrackets@gmail.com" url="https://github.com/Daniel-W-Garcia">Daniel Garcia</vendor>
+    <version>1.3.0</version>
+    <vendor email="levelbasedbrackets@gmail.com"
+            url="https://github.com/Daniel-W-Garcia">Daniel Garcia</vendor>
 
-    <!-- IDE version compatibility -->
-    <idea-version since-build="253"/>
+    <idea-version since-build="243"/>
 
-    <description><![CDATA[
-    <h1>Free Colorflow Brackets</h1>
-    <p>A completely free alternative to subscription or fee based alternatives - Colors nested curly braces <code>{}</code> based on nesting depth across all supported programming languages.</p>
-    <ul>
-        <li><strong>Universal Support:</strong> Works with C#, Java, Kotlin, Python, JavaScript, and all supported languages</li>
-        <li><strong>6 Color Levels:</strong> Handles deeply nested code structures</li>
-        <li><strong>Customizable:</strong> Set your own colors in Settings → Editor → Color Scheme → Free Bracket Colorer</li>
-        <li><strong>100% Free:</strong> No subscriptions, no limitations, completely open source</li>
-        <li><strong>Lightweight:</strong> Minimal performance impact</li>
-    </ul>
-    ]]></description>
-
-    <change-notes><![CDATA[
-    <h2>Version 1.2.0</h2>
-    <ul>
-        <li>Updated compatibility for JetBrains IDE's 2026.1 and later</li>
-    </ul>
-    <h2>Version 1.1.0</h2>
-    <ul>
-        <li>Updated compatibility for JetBrains IDEs 2025.3 and later</li>
-    </ul>
-    <h2>Version 1.0.1</h2>
-    <ul>
-        <li>Expanded IDE support across all JetBrains platforms</li>
-    </ul>
-    <h2>Version 1.0.0</h2>
-    <ul>
-        <li>Initial release</li>
-        <li>Support for all languages including C#, Java, Kotlin, Python, JavaScript</li>
-        <li>6 customizable color levels for deep nesting</li>
-        <li>Lightweight and fast</li>
-        <li>Works across all JetBrains IDEs</li>
-    </ul>
-    ]]></change-notes>
-
-    <!-- Platform module dependency - provides cross-IDE compatibility -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <annotator language="" implementationClass="com.danielwgarcia.freecolorflowbrackets.BracketAnnotator"/>
-        <colorSettingsPage implementation="com.danielwgarcia.freecolorflowbrackets.BracketColorSettingsPage"/>
-
-        <!-- Default colors for light themes -->
-        <additionalTextAttributes
-                scheme="Default"
-                file="colorSchemes/ColorFlowBracketsDefault.xml"/>
-
-        <!-- Default colors for dark themes -->
-        <additionalTextAttributes
-                scheme="Darcula"
-                file="colorSchemes/ColorFlowBracketsDarcula.xml"/>
+        <annotator language=""
+                   implementationClass="com.danielwgarcia.freecolorflowbrackets.BracketAnnotation"/>
+        <colorSettingsPage
+                implementation="com.danielwgarcia.freecolorflowbrackets.BracketColorSettings"/>
     </extensions>
 </idea-plugin>

@@ -1,13 +1,15 @@
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.2.20"
-    id("org.jetbrains.intellij.platform") version "2.16.0"
+    id("org.jetbrains.kotlin.jvm")
+    id("org.jetbrains.changelog")
+    id("org.jetbrains.intellij.platform")
 }
 
 group = "com.danielwgarcia"
-version = "1.2.0"
+version = "1.3.0"
 
 repositories {
     mavenCentral()
@@ -18,16 +20,17 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdea("2026.1")
-        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
+        intellijIdeaCommunity("2024.3")
+        testFramework(TestFrameworkType.Platform)
+
     }
 }
 
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = "253"
-            untilBuild = provider {null}
+            sinceBuild = "243"
+            untilBuild = provider { null }
         }
     }
 }

@@ -7,8 +7,8 @@ A completely free alternative to Rainbow Brackets for IntelliJ Platform IDEs. Co
 ## Features
 
 - 🌈 **Universal Language Support** - Works with C#, Java, Kotlin, JavaScript, Python, and all languages
-- 🎨 **6 Color Levels** - Handles deeply nested code structures  
-- ⚙️ **Fully Customizable** - Set your own colors in Settings → Editor → Color Scheme → Free Bracket Colorer
+- 🎨 **6 Color Levels** - Handles deeply nested code structures
+- ⚙️ **Fully Customizable** - Set your own colors in Settings → Editor → Color Scheme → Free Colorflow Brackets
 - 💰 **100% Free** - No subscriptions, no limitations, completely open source
 - ⚡ **Lightweight** - Minimal performance impact
 
@@ -28,11 +28,11 @@ A completely free alternative to Rainbow Brackets for IntelliJ Platform IDEs. Co
 ## Customization
 
 Customize bracket colors in:
-`Settings` → `Editor` → `Color Scheme` → `Free Bracket Colorer`
+`Settings` → `Editor` → `Color Scheme` → `Free Colorflow Brackets`
 
 Each nesting level can have its own:
 - Text color
-- Background color  
+- Background color
 - Font effects (bold, italic, etc.)
 
 ## Supported IDEs
@@ -48,30 +48,28 @@ Each nesting level can have its own:
 
 ## Development
 
-### Building from Source
-
-Contributing
+### Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-    Fork the repository
-    Create your feature branch (git checkout -b feature/AmazingFeature)
-    Commit your changes (git commit -m 'Add some AmazingFeature')
-    Push to the branch (git push origin feature/AmazingFeature)
-    Open a Pull Request
+    1. Fork the repository
+    2. Create your feature branch (git checkout -b feature/AmazingFeature)
+    3. Commit your changes (git commit -m 'Add some AmazingFeature')
+    4. Push to the branch (git push origin feature/AmazingFeature)
+    5. Open a Pull Request
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
 
-    Inspired by the need for a free, open-source bracket colorizer
-    Built for the IntelliJ Platform community
-Support
+## Acknowledgments
+
+Inspired by the need for a free, open-source bracket colorizer
+
+Built for the IntelliJ Platform community
+
+### Support
 
     🐛 Found a bug? Open an issue
     💡 Have a feature request? Start a discussion
     ⭐ Like the plugin? Give us a star!
-
-
-
