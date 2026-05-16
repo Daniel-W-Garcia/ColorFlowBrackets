@@ -9,16 +9,16 @@ import com.intellij.openapi.options.colors.ColorSettingsPage
 import javax.swing.Icon
 import com.intellij.openapi.util.IconLoader
 
-class BracketColorSettingsPage : ColorSettingsPage {
+class BracketColorSettings : ColorSettingsPage {
 
     override fun getAttributeDescriptors(): Array<AttributesDescriptor> {
         return arrayOf(
-            AttributesDescriptor("Level 0 - Outermost braces (classes, methods)", BracketAnnotator.BRACKET_LEVEL_0),
-            AttributesDescriptor("Level 1 - Control structures (if, for, while)", BracketAnnotator.BRACKET_LEVEL_1),
-            AttributesDescriptor("Level 2 - Nested conditions and loops", BracketAnnotator.BRACKET_LEVEL_2),
-            AttributesDescriptor("Level 3 - Switch cases, try-catch blocks", BracketAnnotator.BRACKET_LEVEL_3),
-            AttributesDescriptor("Level 4 - Deep nesting (using, inner blocks)", BracketAnnotator.BRACKET_LEVEL_4),
-            AttributesDescriptor("Level 5 - Maximum nesting level", BracketAnnotator.BRACKET_LEVEL_5)
+            AttributesDescriptor("Level 0 - Outermost braces", BracketAnnotation.INDENTATION_LEVEL_0),
+            AttributesDescriptor("Level 1 - One TAB over", BracketAnnotation.INDENTATION_LEVEL_1),
+            AttributesDescriptor("Level 2 - Two TAB over", BracketAnnotation.INDENTATION_LEVEL_2),
+            AttributesDescriptor("Level 3 - Three TAB over", BracketAnnotation.INDENTATION_LEVEL_3),
+            AttributesDescriptor("Level 4 - Four TAB over", BracketAnnotation.INDENTATION_LEVEL_4),
+            AttributesDescriptor("Level 5 - Five TAB over", BracketAnnotation.INDENTATION_LEVEL_5)
         )
     }
 
